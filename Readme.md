@@ -10,6 +10,7 @@ It is crucial for the logic to be sorted lexicographically in files, first one d
 ```
 javac -d . -cp jline-1.0.jar src/Logic.java src/Person.java src/QuestionBar.java src/Scene.java src/Main.java
 ```
+Java 8+ required 
 
 ##Run instruction
 ```
