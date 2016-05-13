@@ -16,12 +16,14 @@ public class QuestionBar {
 	public QuestionBar(Person suspects[]){
 		questions = new String[3][][];
 		level = 0;
-		firstLine = suspects[0].name + "\t\t" + suspects[1].name + "\t\t"
-				+ suspects[2].name + "\n";
+		firstLine = "";
+		for (int i = 0; i< suspects.length; i++) 
+			firstLine += suspects[i].name + "\t\t";
+		firstLine += "\n"; 
 		this.suspects = suspects;
 		
-		questions[0] = new String[2][3];
-		for (int i = 0; i<3; i++){
+		questions[0] = new String[2][suspects.length];
+		for (int i = 0; i<suspects.length; i++){
 			questions[0][0][i] = "Question";
 			questions[0][1][i] = "Accuse\t";
 		}
@@ -33,8 +35,8 @@ public class QuestionBar {
 		questions[1][3][0] = "Implication statement";
 		questions[1][4][0] = "Back";
 		
-		questions[2] = new String[6][2];
-		for (int i = 0; i<2; i++){
+		questions[2] = new String[6][suspects.length-1];
+		for (int i = 0; i<suspects.length-1; i++){
 			questions[2][0][i] = "has weapon";
 			questions[2][1][i] = "has no weapon";
 			questions[2][2][i] = "has motive";
@@ -42,7 +44,7 @@ public class QuestionBar {
 			questions[2][4][i] = "is smoking";
 			questions[2][5][i] = "is not smoking";
 		}
-		currentMaxX = 2;
+		currentMaxX = suspects.length - 1;
 		currentMaxY = 1;
 
 	}
@@ -93,9 +95,11 @@ public class QuestionBar {
 				level = 2;
 			} else if (currentCursorY == 4){
 				level = 0;
-				firstLine = suspects[0].name + "\t" + suspects[1].name + "\t\t"
-						+ suspects[2].name + "\n";
-				} else {
+				firstLine = "";
+				for (int i = 0; i< suspects.length; i++) 
+					firstLine += suspects[i].name + "\t\t";
+				firstLine += "\n"; 
+			} else {
 				question = new int[3];
 				question[0] = currentCursorY;
 				question[1] = -1;
@@ -125,8 +129,10 @@ public class QuestionBar {
 				ret += suspects[personAsked].name + " says: \t" + suspects[statementAbout].name 
 						+ " " + questions[2][currentCursorY][0] + ". " + suspects[personAsked].answear(reality);
 				
-				firstLine = suspects[0].name + "\t\t" + suspects[1].name + "\t\t"
-						+ suspects[2].name + "\n";
+				firstLine = "";
+				for (int i = 0; i< suspects.length; i++) 
+					firstLine += suspects[i].name + "\t\t";
+				firstLine += "\n"; 
 				level = 0;
 			} else if (question[1] == -1){
 				question[1] = currentCursorY * 3 + statementAbout; // Now statement about is modulo of this value
@@ -173,8 +179,10 @@ public class QuestionBar {
 				
 				ret+=suspects[personAsked].answear(answear);
 				
-				firstLine = suspects[0].name + "\t\t" + suspects[1].name + "\t\t"
-						+ suspects[2].name + "\n";
+				firstLine = "";
+				for (int i = 0; i< suspects.length; i++) 
+					firstLine += suspects[i].name + "\t\t";
+				firstLine += "\n"; 
 				level = 0;
 			}
 			break;

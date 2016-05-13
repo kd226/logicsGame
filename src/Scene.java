@@ -55,11 +55,11 @@ public class Scene {
 	    chatLength = 0;
 	    State = 0;
 	    // Initialize suspects
-	    suspects = new Person[3];
+	    suspects = new Person[4];
 	    Random generator = new Random();
 	    int killer = generator.nextInt(3); // Random killer 
 	    int liar = generator.nextInt(3); // Random liar
-	    for (int i = 0; i<3; i++){
+	    for (int i = 0; i<suspects.length; i++){
 	    	int guiltTable[] = new int [3];
 	    	for (int j = 0; j<guiltTable.length; j++){
 	    		guiltTable[j] = generator.nextInt(Logic.valued);
@@ -77,6 +77,7 @@ public class Scene {
 	    suspects[0].name = "\033[34;1mJan\033[39;22m";
 	    suspects[1].name = "\033[33;1mAlfred\033[39;22m";
 	    suspects[2].name = "\033[36;1mRoman\033[39;22m";
+	    suspects[3].name = "\033[32;1mJerzy\033[39;22m";
 	    		
 	    qb = new QuestionBar(suspects);
 		while(State == 0 && !counter.isZero()){
@@ -149,7 +150,7 @@ public class Scene {
 		}
 		if (State == 2){
 			System.out.println("The real killer was... ");
-			for (int i = 0; i< 3; i++){
+			for (int i = 0; i< suspects.length; i++){
 				if (suspects[i].killer) System.out.println("\t" + suspects[i].name);			
 			}
 			System.out.println("And the liar was...");

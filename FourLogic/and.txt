@@ -1,0 +1,16 @@
+False False False
+False True False
+False Both False
+False None False
+True False False
+True True True
+True Both Both
+True None None
+Both False False
+Both True Both
+Both Both Both
+Both None False
+None False False
+None True None
+None Both False
+None None None
