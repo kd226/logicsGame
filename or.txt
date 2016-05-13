@@ -1,0 +1,9 @@
+False False False
+False True True
+False Possible Possible
+True False True
+True True True
+True Possible True
+Possible False Possible
+Possible True True
+Possible Possible Possible
