@@ -6,7 +6,7 @@ It uses a lot of ANSI escape codes, so may not work or work improperly on termin
 ##Compile instruction
 
 ```
-javac -d ./.. -cp ./../jline-1.0.jar Logic.java Person.java QuestionBar.java Scene.java Main.java
+javac -d . -cp jline-1.0.jar src/Logic.java src/Person.java src/QuestionBar.java src/Scene.java src/Main.java
 ```
 
 ##Run instruction
