@@ -1,6 +1,6 @@
 #Hilbert Hotel
 
-It`s a simple logical game written in Java using library JLine.
+It`s a simple logical game written in Java 8 (important!) using library JLine.
 It uses a lot of ANSI escape codes, so may not work or work improperly on terminals not supporting those.
 
 ##Compile instruction
