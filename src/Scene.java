@@ -147,6 +147,17 @@ public class Scene {
 		+ " seconds.\n");
 			System.out.print("Can you do even better?\n\n");
 		}
+		if (State == 2){
+			System.out.println("The real killer was... ");
+			for (int i = 0; i< 3; i++){
+				if (suspects[i].killer) System.out.println("\t" + suspects[i].name);			
+			}
+			System.out.println("And the liar was...");
+			for (int i = 0; i< 3; i++){
+				if (suspects[i].lying) System.out.println("\t" + suspects[i].name);			
+			}
+
+		}
 		
 		System.out.print("\033[0m\033[?25h");
 		reader.getTerminal().enableEcho();

@@ -20,6 +20,7 @@ public final class Logic {
 	
 	public static int andValue(int a, int b){
 		return and[valued*a + b][2];
+		
 	}
 	
 	public static int orValue(int a, int b){
@@ -160,16 +161,18 @@ public final class Logic {
 			// Read or truth table
 			try {
 				String orS[][] = readFileToTab(orFile, 3);
-				and = stringTabToInt(orS);
+				or = stringTabToInt(orS);
 			} catch (FileNotFoundException e) {
 				System.out.print("File "+orFile.getName()+" not found.");
 			}
 			try {
 				String implS[][] = readFileToTab(implFile, 3);
-				and = stringTabToInt(implS);
+				impl = stringTabToInt(implS);
 			} catch (FileNotFoundException e) {
 				System.out.print("File "+implFile.getName()+" not found.");
 			}
+			
+			
 			break;
 		default:
 			wrongArguments();
