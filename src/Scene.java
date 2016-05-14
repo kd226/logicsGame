@@ -55,10 +55,10 @@ public class Scene {
 	    chatLength = 0;
 	    State = 0;
 	    // Initialize suspects
-	    suspects = new Person[4];
+	    suspects = new Person[5];
 	    Random generator = new Random();
-	    int killer = generator.nextInt(3); // Random killer 
-	    int liar = generator.nextInt(3); // Random liar
+	    int killer = generator.nextInt(suspects.length); // Random killer 
+	    int liar = generator.nextInt(suspects.length); // Random liar
 	    for (int i = 0; i<suspects.length; i++){
 	    	int guiltTable[] = new int [3];
 	    	for (int j = 0; j<guiltTable.length; j++){
@@ -78,6 +78,7 @@ public class Scene {
 	    suspects[1].name = "\033[33;1mAlfred\033[39;22m";
 	    suspects[2].name = "\033[36;1mRoman\033[39;22m";
 	    suspects[3].name = "\033[32;1mJerzy\033[39;22m";
+	    suspects[4].name = "\033[31;1mTadeusz\033[39;22m";
 	    		
 	    qb = new QuestionBar(suspects);
 		while(State == 0 && !counter.isZero()){
